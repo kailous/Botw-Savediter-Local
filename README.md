@@ -7,6 +7,21 @@
 
 *tips：这个本地版的，主要是为了解决一个痛点，就是存档编号的问题，以往需要对照着图片确认是哪个存档。但现在这个但文件版本可以获取到存档的截图直接列出来，并标注上编号。方便确认那个是你需要修改的。*
 
+### 自动安装
+
+复制以下代码到 [ 终端.app ] 运行自动下载html文件到存档根目录
+```sh
+CEMU_DIR="$HOME/Library/Application Support/Cemu"
+INS_FILE="https://raw.githubusercontent.com/kailous/Botw-Savediter-Local/main/index.html"
+if [ -d "$CEMU_DIR/mlc01" ]; then
+    echo "mlc目录正常无误\n开始安装："
+    curl -# -o "$CEMU_DIR/mlc01/index.html" "$INS_FILE"
+    else
+    echo "文件夹不存在，请确保 mlc1 放在 根目录\n根目录地址：$CEMU_DIR"
+fi
+```
+
+
 ### 在线版本
 ![Botw-Savediter](http://kailous.github.io/Botw-Savediter/cover.png)     
 [Botw-Savediter](https://kailous.github.io/Botw-Savediter/) | [Goto Github](https://github.com/kailous/Botw-Savediter)
