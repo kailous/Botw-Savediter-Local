@@ -13,9 +13,21 @@
 ```sh
 CEMU_DIR="$HOME/Library/Application Support/Cemu"
 INS_FILE="https://raw.githubusercontent.com/kailous/Botw-Savediter-Local/main/index.html"
+APP="https://kailous.github.io/Botw-Savediter-Local/Botw-Savediter.app"
 if [ -d "$CEMU_DIR/mlc01" ]; then
     echo "mlc目录正常无误\n开始安装："
+    echo "下载主体文件到 mlc01"
     curl -# -o "$CEMU_DIR/mlc01/index.html" "$INS_FILE"
+    echo "主题文件下载完成，开始构建APP"
+    mkdir -p "/Applications/Botw-Savediter.app/"
+    mkdir -p "/Applications/Botw-Savediter.app/Contents"
+    mkdir -p "/Applications/Botw-Savediter.app/Contents/MacOS"
+    mkdir -p "/Applications/Botw-Savediter.app/Contents/Resources"
+    curl -# -o "/Applications/Botw-Savediter.app/Contents/Info.plist" "https://kailous.github.io/Botw-Savediter-Local/Botw-Savediter.app/Contents/Info.plist"
+    curl -# -o "/Applications/Botw-Savediter.app/Contents/Resources/AppIcon.icns" "https://kailous.github.io/Botw-Savediter-Local/Botw-Savediter.app/Contents/Resources/AppIcon.icns"
+    curl -# -o "/Applications/Botw-Savediter.app/Contents/MacOS/run.sh" "https://kailous.github.io/Botw-Savediter-Local/Botw-Savediter.app/Contents/MacOS/run.sh"
+    # 修复应用权限
+    chmod -R 777 "/Applications/Botw-Savediter.app"
     else
     echo "文件夹不存在，请确保 mlc1 放在 根目录\n根目录地址：$CEMU_DIR"
 fi
