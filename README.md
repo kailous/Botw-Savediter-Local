@@ -13,11 +13,9 @@
 ```sh
 CEMU_DIR="$HOME/Library/Application Support/Cemu"
 INS_FILE="https://raw.githubusercontent.com/kailous/Botw-Savediter-Local/main/index.html"
-APP="https://github.com/kailous/Botw-Savediter-Local/tree/main/%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF%E5%AD%98%E6%A1%A3%E4%BF%AE%E6%94%B9%E5%99%A8.app"
 if [ -d "$CEMU_DIR/mlc01" ]; then
     echo "mlc目录正常无误\n开始安装："
     curl -# -o "$CEMU_DIR/mlc01/index.html" "$INS_FILE"
-    curl -# -o "/Applications/旷野之息内存修改器.app" "$APP"
     else
     echo "文件夹不存在，请确保 mlc1 放在 根目录\n根目录地址：$CEMU_DIR"
 fi
