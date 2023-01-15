@@ -1,6 +1,6 @@
 ![](bin/cover.png)
 # Botw-Savediter-Local
-塞尔达传说：旷野之息 游戏存档修改器的本地单文件版本 <br/>
+塞尔达传说：旷野之息 游戏存档修改器 CEMU专用 本地单文件版本 <br/>
 本来想打包 App 的，但是发现再怎么压缩文件都很大，不如就单个页面文件吧。没有把 [css] 和 [js] 等等 都放到本地是因为后期更新不太方便。这样一个单html文件直接放在 [mlc1] 根目录去，使用起来也比较简单。
 
 ----
@@ -9,7 +9,7 @@
 
 ### 自动安装
 
-复制以下代码到 [ 终端.app ] 运行自动下载html文件到存档根目录
+复制以下代码到 [ 终端.app ] 运行自动下载html文件到存档根目录，并在应用程序中建立启动器app。
 ```sh
 CEMU_DIR="$HOME/Library/Application Support/Cemu"
 INS_FILE="https://raw.githubusercontent.com/kailous/Botw-Savediter-Local/main/index.html"
